@@ -1,201 +1,24 @@
+
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume NTSH — 陳瑞翊的經驗展示</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0a0f1c;
-      --panel: #131b2e;
-      --accent: #3b82f6;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --glow: 0 0 10px rgba(59,130,246,0.6);
-    }
-    * { margin:0; padding:0; box-sizing: border-box; }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background: rgba(19,27,46,0.9);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 0;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: background-color 0.3s, box-shadow 0.3s;
-      font-weight: 500;
-    }
-    nav a:hover, nav a.active {
-      background: var(--accent);
-      color: white;
-      box-shadow: var(--glow);
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #60a5fa, #3b82f6, #2563eb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    header p {
-      margin-top: 10px;
-      color: var(--muted);
-    }
-    main {
-      flex: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    section {
-      margin-top: 50px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      display: none;
-    }
-    section.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 16px;
-      border-left: 4px solid var(--accent);
-      padding-left: 10px;
-    }
-    .card {
-      background: var(--panel);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
-    }
-    footer {
-      text-align: center;
-      padding: 25px 10px;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      background: rgba(19,27,46,0.8);
-    }
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-  </style>
+    <title>讀書計畫</title>
+</head>
+        body {
+            background-color: #E6F0FF; /* 這裡設定背景顏色 */
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <a href="#competition" class="active">競賽經驗</a>
-    <a href="#activities">課外活動</a>
-    <a href="#leadership">幹部經驗</a>
-    <a href="#club">社團經驗</a>
-    <a href="#electives">多元選修課程</a>
-    <a href="#ai">AI 應用</a>
-  </nav>
-
-  <header>
-    <h1>Resume NTSH</h1>
-    <p>經驗展示平台</p>
-  </header>
-
-  <main>
-    <section id="competition" class="active">
-      <h2>競賽經驗</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-
-    <section id="activities">
-      <h2>課外活動</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-
-    <section id="leadership">
-      <h2>幹部經驗</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-
-    <section id="club">
-      <h2>社團經驗</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-
-    <section id="electives">
-      <h2>多元選修課程</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-
-    <section id="ai">
-      <h2>AI 應用</h2>
-      <div class="card">
-        <p>• </p>
-        <p>• </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 陳瑞翊 · Resume NTSH · 模板展示平台
-  </footer>
-
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const secs = document.querySelectorAll("main section");
-    links.forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        const target = link.getAttribute("href").substring(1);
-        // 更新導覽列樣式
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-        // 顯示對應區塊
-        secs.forEach(s => {
-          if (s.id === target) {
-            s.classList.add("active");
-          } else {
-            s.classList.remove("active");
-          }
-        });
-      });
-    });
-  </script>
+    <h1>新北高中31016陳瑞翊的讀書計畫</h1>
+    <ul>
+        <li><a href="/competition">競賽經驗</a></li>
+        <li><a href="/activities">課外活動</a></li>
+        <li><a href="/leadership">幹部經驗</a></li>
+        <li><a href="/club">社團經驗</a></li>
+        <li><a href="/electives">多元選修課程</a></li>
+        <li><a href="/ai">AI應用</a></li>
+    </ul>
 </body>
 </html>
